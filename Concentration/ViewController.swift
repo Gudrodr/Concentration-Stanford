@@ -23,13 +23,13 @@ class ViewController: UIViewController {
     
     private var emojiCollection = ["🦊", "🐱", "🐰", "🐮", "🐷", "🐸", "🐼", "🦁", "🐨", "🐻", "🐹", "🐵"]
     
-    private var emojiDictionary = [Int: String]()
+    private var emojiDictionary = [Card: String]()
     
     private func emojiIdentifier(for card: Card) -> String {
-        if emojiDictionary[card.identifier] == nil {
-            emojiDictionary[card.identifier] = emojiCollection.remove(at: emojiCollection.count.arc4randomExtention)
+        if emojiDictionary[card] == nil {
+            emojiDictionary[card] = emojiCollection.remove(at: emojiCollection.count.arc4randomExtention)
         }
-        return emojiDictionary[card.identifier] ?? "?"
+        return emojiDictionary[card] ?? "?"
     }
     
     private func updadeViewFromModel() {
